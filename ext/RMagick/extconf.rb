@@ -141,10 +141,10 @@ module RMagick
         `magick identify -version` =~ /Version: ImageMagick (\d+\.\d+\.\d+)-+\d+ /
         abort 'Unable to get ImageMagick version' unless $1
         $magick_version = $1
-        unless have_library('CORE_RL_magick_')
-          search_paths_for_library_for_mingw
-        end
-        have_library('X11')
+        # unless have_library('CORE_RL_magick_')
+        #   search_paths_for_library_for_mingw
+        # end
+        # have_library('X11')
 
       else  # mswin
 

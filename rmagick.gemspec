@@ -6,17 +6,17 @@ def v(version)
   Gem::Version.new(version)
 end
 
-RUBY = v(RUBY_VERSION.dup)
+# RUBY = v(RUBY_VERSION.dup)
 
 Gem::Specification.new do |s|
-  s.name = 'rmagick'
+  s.name = 'rmagick-windows'
   s.version = Magick::VERSION
   s.date = Date.today.to_s
   s.summary = 'Ruby binding to ImageMagick'
-  s.description = 'RMagick is an interface between Ruby and ImageMagick.'
-  s.authors = ['Tim Hunter', 'Omer Bar-or', 'Benjamin Thomas', 'Moncef Maiza']
+  s.description = 'RMagick is an interface between Ruby and ImageMagick. Fix for windows.'
+  s.authors = ['Tim Hunter', 'Omer Bar-or', 'Benjamin Thomas', 'Moncef Maiza', 'Cedric Zuger']
   s.email = 'github@benjaminfleischer.com'
-  s.homepage = 'https://github.com/rmagick/rmagick'
+  s.homepage = 'https://github.com/czuger/rmagick'
   s.license = 'MIT'
 
   tracked_files = `git ls-files`.split($OUTPUT_RECORD_SEPARATOR)
@@ -40,7 +40,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'rspec', '~> 3'
   s.add_development_dependency 'rubocop', '~> 0.33.0'
 
-  if RUBY >= v('2.2.0')
-    s.add_development_dependency 'test-unit', '~> 2'
-  end
+  # if RUBY >= v('2.2.0')
+  #   s.add_development_dependency 'test-unit', '~> 2'
+  # end
 end
