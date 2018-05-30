@@ -138,7 +138,7 @@ module RMagick
 
       elsif RUBY_PLATFORM =~ /mingw/  # mingw
 
-        `identify -version` =~ /Version: ImageMagick (\d+\.\d+\.\d+)-+\d+ /
+        `magick identify -version` =~ /Version: ImageMagick (\d+\.\d+\.\d+)-+\d+ /
         abort 'Unable to get ImageMagick version' unless $1
         $magick_version = $1
         unless have_library('CORE_RL_magick_')
@@ -148,7 +148,7 @@ module RMagick
 
       else  # mswin
 
-        `identify -version` =~ /Version: ImageMagick (\d+\.\d+\.\d+)-+\d+ /
+        `magick identify -version` =~ /Version: ImageMagick (\d+\.\d+\.\d+)-+\d+ /
         abort 'Unable to get ImageMagick version' unless $1
         $magick_version = $1
         $CFLAGS = '-W3'
